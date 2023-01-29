@@ -1,0 +1,43 @@
+<app-header></app-header>
+<section class="vh-100" style="background-color: lightblue;" *ngFor="let weather of weathers">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+        <div class="card" style="color: #4B515D; border-radius: 35px;">
+          <div class="card-body p-4">
+
+            <div class="d-flex">
+              <h6 class="flex-grow-1">{{weather.nearest_area[0].areaName[0].value}},
+                {{weather.nearest_area[0].region[0].value}},
+                {{weather.nearest_area[0] .country[0].value}}</h6>
+              <p>{{weather.current_condition[0].weatherDesc[0].value}}</p>
+            </div>
+
+            <div class="d-flex flex-column text-center mt-5 mb-4">
+              <h6 class="display-4 mb-0 font-weight-bold" style="color: gray;">
+                {{weather.current_condition[0].temp_C}}°C </h6>
+              <span class="small" style="color: #868B94">(ressenties:
+                {{weather.current_condition[0].FeelsLikeC}}°C)</span>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <div class="flex-grow-1" style="font-size: 1rem;">
+                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span
+                    class="ms-1">{{weather.current_condition[0].windspeedKmph}} (Km/h) </span></div>
+                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1">
+                    {{weather.current_condition[0].humidity}}% </span></div>
+                <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1">
+                    {{weather.current_condition[0].precipMM}} mm </span></div>
+              </div>
+              <div>
+                <img src="http://www.cycloneoi.com/medias/images/logo-meteo.png" alt="login form" class="img-fluid"
+                  style="border-radius: 1rem 0 0 1rem;" width="100px">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
