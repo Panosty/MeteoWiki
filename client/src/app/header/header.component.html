@@ -1,0 +1,22 @@
+<div class="topnav">
+    <a class="active bg-light" style="color: gray;"> <img src="http://www.cycloneoi.com/medias/images/logo-meteo.png"
+            width="50px">
+        <strong>MétéoWiki</strong></a>
+    <a routerLink="/weather">Conditions actuelles</a>
+    <a routerLink="/hourly">Prochaines heures</a>
+    <div class="search-container">
+        <form method="get">
+            <input [(ngModel)]='location' type="text" placeholder="Rechercher" name="villes">
+            <button type="submit" name="submit2  " class="btn btn-warning" (click)="logout()">Logout</button>
+            <button type="submit" name="submit" (click)="updateLocation()"><i class="fa fa-search">
+
+                    <img src="assets/rechercher.png" width="18px">
+                </i></button>
+        </form>
+
+    </div>
+</div>
+
+<div style="padding-left:16px">
+
+</div>

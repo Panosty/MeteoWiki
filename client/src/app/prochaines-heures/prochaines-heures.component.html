@@ -1,0 +1,74 @@
+<app-header></app-header>
+<section class="vh-99" style="background-color: lightblue;" *ngFor="let meteoH of weathers">
+  <div class="container py-5 h-100">
+
+    <div class="row d-flex justify-content-center align-items-center h-100" style="color: #282828;">
+      <div class="col-md-9 col-lg-7 col-xl-5">
+
+        <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+          <div class="card-body p-4">
+
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-between mb-4 pb-2">
+
+                    <div>
+                      <p style="color:gray"><strong>Dernière observation:</strong> <br>
+                        ({{meteoH.current_condition[0].observation_time}}) </p>
+                      <br>
+                      <h4 class="text-muted mb-0"> {{meteoH.nearest_area[0].areaName[0].value}},
+                        {{meteoH.nearest_area[0].region[0].value}},
+                        {{meteoH.nearest_area[0] .country[0].value}}</h4>
+                    </div>
+
+                    <div>
+                      <img src="http://www.cycloneoi.com/medias/images/logo-meteo.png" alt="login form"
+                        class="img-fluid" style="border-radius: 1rem 0 0 1rem;" width="100px">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card mb-4" style="border-radius: 25px;">
+          <div class="card-body p-4">
+
+            <div id="demo2" class="carousel slide" data-ride="carousel">
+
+
+              <div class="carousel-inner">
+                <h5 class="center text-center" style="color: gray;">Températures réelles et ressenties <br> pour les
+                  prochaines heures:</h5>
+                <br>
+
+                <div class="carousel-item active" *ngFor="let heure of meteoH.weather[0].hourly">
+
+                  <div class="d-flex justify-content-around text-center mb-4 pb-3 pt-2" style="color: gray;">
+
+                    <div *ngFor="let heure of meteoH.weather[0].hourly" class="flex-column">
+                      <p class="mb-0"><strong>{{heure.time|normale}}</strong></p>
+                      <br>
+                      <p class="small"><strong> {{heure.tempC}}°C</strong></p>
+                      <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
+                      <p class="small"><strong> {{heure.FeelsLikeC}}°C</strong></p>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
